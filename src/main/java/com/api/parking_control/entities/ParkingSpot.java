@@ -1,7 +1,9 @@
 package com.api.parking_control.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -12,13 +14,15 @@ import java.util.UUID;
 @Table(name = "tb_parking_spot")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ParkingSpot {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false, unique = true, length = 10)
-    private String parkingSportNumber;
+    private String parkingSpotNumber;
     @Column(nullable = false, unique = true, length = 7)
     private String licensePlateCar;
     @Column(nullable = false, length = 70)
